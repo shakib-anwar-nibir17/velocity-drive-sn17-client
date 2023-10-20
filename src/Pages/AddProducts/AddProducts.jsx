@@ -43,124 +43,128 @@ const AddProducts = () => {
     // form.reset();
   };
   return (
-    <div className="container mx-auto bg-[#0d47aa9c] mt-28 pb-20">
-      <h2 className="text-4xl font-bold text-center mb-24 pt-20">
-        Add products
-      </h2>
-      <form onSubmit={handleAddProducts}>
-        {/* form name and brand name */}
-        <div className="md:flex mb-6 px-4 gap-5">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">
-                Product Name
-              </span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="name"
-                placeholder="Product Name"
-                className="input input-bordered w-full"
-              />
-            </label>
+    <div className="px-2">
+      <div className="container mx-auto bg-[#0d47aa9c] mt-28 pb-20">
+        <h2 className="text-4xl font-bold text-center mb-24 pt-20">
+          Add products
+        </h2>
+        <form onSubmit={handleAddProducts}>
+          {/* form name and brand name */}
+          <div className="md:flex mb-6 px-4 gap-5">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">
+                  Product Name
+                </span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Product Name"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">
+                  Brand Name
+                </span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="brand"
+                  placeholder="Enter Brand Name"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">Brand Name</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="brand"
-                placeholder="Enter Brand Name"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* form price and ratings */}
+          <div className="md:flex mb-6 px-4 gap-5">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">Price</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="price"
+                  placeholder="Enter products price"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">Ratings</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="ratings"
+                  placeholder="Enter product ratings"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* form price and ratings */}
-        <div className="md:flex mb-6 px-4 gap-5">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">Price</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="price"
-                placeholder="Enter products price"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* form types and Details */}
+          <div className="md:flex mb-6 px-4 gap-5">
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">Types</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="type"
+                  placeholder="Enter product types"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">Photo</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Enter photo URL"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">Ratings</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="ratings"
-                placeholder="Enter product ratings"
-                className="input input-bordered w-full"
-              />
-            </label>
+          {/* form photo */}
+          <div className="mb-6 px-4">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-2xl font-bold">Details</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="details"
+                  placeholder="Enter product details"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* form types and Details */}
-        <div className="md:flex mb-6 px-4 gap-5">
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">Types</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="type"
-                placeholder="Enter product types"
-                className="input input-bordered w-full"
-              />
-            </label>
+          <div className="px-4 flex justify-center">
+            <input
+              type="submit"
+              value="Add products"
+              className="btn text-white  w-1/2 bg-[#687EFF]"
+            />
           </div>
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">Photo</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="photo"
-                placeholder="Enter photo URL"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        {/* form photo */}
-        <div className="mb-6 px-4">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-2xl font-bold">Details</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="details"
-                placeholder="Enter product details"
-                className="input input-bordered w-full"
-              />
-            </label>
-          </div>
-        </div>
-        <div className="px-4 flex justify-center">
-          <input
-            type="submit"
-            value="Add products"
-            className="btn  w-1/2 bg-[#80B3FF]"
-          />
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

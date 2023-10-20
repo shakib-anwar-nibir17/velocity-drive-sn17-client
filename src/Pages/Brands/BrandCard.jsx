@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const BrandCard = ({ brand }) => {
   const { _id, brand_image, brand_name } = brand;
-  console.log(brand);
   return (
     <div>
       <Link to={`/brands/${_id}`}>

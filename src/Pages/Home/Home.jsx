@@ -7,7 +7,15 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <Brands brands={brands}></Brands>
+      <div className="mt-16">
+        <h2
+          className="text-3xl font-bold
+         text-sky-400 text-center"
+        >
+          Our Brands
+        </h2>
+        <Brands brands={brands}></Brands>
+      </div>
     </div>
   );
 };

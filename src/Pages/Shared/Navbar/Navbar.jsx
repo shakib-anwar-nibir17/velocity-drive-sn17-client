@@ -45,12 +45,12 @@ const Navbar = () => {
               : "hover:bg-[#B6FFFA] py-3 px-40 md:px-3  rounded-md hover:text-black"
           }
         >
-          Profile
+          MyCart
         </NavLink>
       </li>
       <li className="mb-5 md:mb-0">
         <NavLink
-          to="/about"
+          to="/login"
           className={({ isActive, isPending }) =>
             isPending
               ? "pending"
@@ -59,7 +59,7 @@ const Navbar = () => {
               : "hover:bg-[#B6FFFA] py-3 px-40 md:px-3 rounded-md hover:text-black"
           }
         >
-          About
+          Login
         </NavLink>
       </li>
     </>
