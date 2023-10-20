@@ -33,9 +33,11 @@ const Products = ({ product }) => {
             View Details
           </button>
         </Link>
-        <button className="bg-blue-400 p-3 rounded-md text-white font-semibold">
-          Update
-        </button>
+        <Link to={`/update_products/${_id}`}>
+          <button className="bg-blue-400 p-3 rounded-md text-white font-semibold">
+            Update
+          </button>
+        </Link>
       </p>
     </div>
   );

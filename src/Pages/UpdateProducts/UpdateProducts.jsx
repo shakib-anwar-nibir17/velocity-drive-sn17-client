@@ -1,7 +1,10 @@
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddProducts = () => {
-  const handleAddProducts = (e) => {
+const UpdateProducts = () => {
+  const product = useLoaderData();
+  const { _id, name, photo, type, details, brand, ratings, price } = product;
+  const handleUpdateProducts = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -12,7 +15,7 @@ const AddProducts = () => {
     const details = form.details.value;
     const photo = form.photo.value;
 
-    const newProducts = {
+    const updatedProduct = {
       name,
       brand,
       price,
@@ -21,23 +24,26 @@ const AddProducts = () => {
       details,
       photo,
     };
-    console.log(newProducts);
+    console.log(updatedProduct);
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
+    fetch(`http://localhost:5000/products/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newProducts),
+      body: JSON.stringify(updatedProduct),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        Swal.fire({
-          icon: "success",
-          title: "Task successful",
-          text: "Product has been updated",
-        });
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product Updated Successfully",
+            icon: "success",
+            confirmButtonText: "Done",
+          });
+        }
       });
   };
   return (
@@ -46,7 +52,7 @@ const AddProducts = () => {
         <h2 className="text-4xl font-bold text-center mb-24 pt-20">
           Add products
         </h2>
-        <form onSubmit={handleAddProducts}>
+        <form onSubmit={handleUpdateProducts}>
           {/* form name and brand name */}
           <div className="md:flex mb-6 px-4 gap-5">
             <div className="form-control md:w-1/2">
@@ -59,6 +65,7 @@ const AddProducts = () => {
                 <input
                   type="text"
                   name="name"
+                  defaultValue={name}
                   placeholder="Product Name"
                   className="input input-bordered w-full"
                 />
@@ -74,6 +81,7 @@ const AddProducts = () => {
                 <input
                   type="text"
                   name="brand"
+                  defaultValue={brand}
                   placeholder="Enter Brand Name"
                   className="input input-bordered w-full"
                 />
@@ -90,6 +98,7 @@ const AddProducts = () => {
                 <input
                   type="text"
                   name="price"
+                  defaultValue={price}
                   placeholder="Enter products price"
                   className="input input-bordered w-full"
                 />
@@ -103,6 +112,7 @@ const AddProducts = () => {
                 <input
                   type="text"
                   name="ratings"
+                  defaultValue={ratings}
                   placeholder="Enter product ratings"
                   className="input input-bordered w-full"
                 />
@@ -119,6 +129,7 @@ const AddProducts = () => {
                 <input
                   type="text"
                   name="type"
+                  defaultValue={type}
                   placeholder="Enter product types"
                   className="input input-bordered w-full"
                 />
@@ -132,6 +143,7 @@ const AddProducts = () => {
                 <input
                   type="text"
                   name="photo"
+                  defaultValue={photo}
                   placeholder="Enter photo URL"
                   className="input input-bordered w-full"
                 />
@@ -147,6 +159,7 @@ const AddProducts = () => {
               <label className="input-group">
                 <input
                   type="text"
+                  defaultValue={details}
                   name="details"
                   placeholder="Enter product details"
                   className="input input-bordered w-full"
@@ -157,7 +170,7 @@ const AddProducts = () => {
           <div className="px-4 flex justify-center">
             <input
               type="submit"
-              value="Add Products"
+              value="Submit"
               className="btn text-white  w-1/2 bg-[#687EFF]"
             />
           </div>
@@ -167,4 +180,4 @@ const AddProducts = () => {
   );
 };
 
-export default AddProducts;
+export default UpdateProducts;
