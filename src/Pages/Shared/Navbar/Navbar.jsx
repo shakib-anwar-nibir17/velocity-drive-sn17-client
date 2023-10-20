@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
+import userDefaultPic from "../../../assets/images/avatar.png";
+import { AuthContext } from "../../../Providers/AuthProviders";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
+  };
   const navLinks = (
     <>
       <li className="mb-5 md:mb-0">
@@ -80,12 +90,49 @@ const Navbar = () => {
         <span className="w-full h-1 bg-white"></span>
         <span className="w-full h-1 bg-white"></span>
       </div>
+
       <ul
-        className={`flex-col md:flex-row md:flex text-center md:pt-3 mt-3 md:mt-0 pb-2 font-bold gap-4 ${
+        className={`flex-col md:flex-row md:flex text-center md:pt-3 mt-3 md:mt-0 pb-2 font-bold gap-4 md:items-center ${
           menuOpen ? "hidden" : ""
         }`}
       >
         {navLinks}
+        <div className="flex items-center space-x-3 bg-[#80B3FF] px-5 py-3 rounded-full justify-center mx-4 md:mx-0">
+          {user && user.displayName ? (
+            <div className="hidden md:block">
+              <h2>{user.displayName}</h2>
+            </div>
+          ) : user ? (
+            <div className="hidden md:block">
+              <h2>{user.email}</h2>
+            </div>
+          ) : null}
+          {user && user.photoURL ? (
+            <label className="btn btn-ghost btn-circle avatar">
+              <div className="w-110 rounded-full ">
+                <img src={user.photoURL} />
+              </div>
+            </label>
+          ) : user ? (
+            <label className="btn btn-ghost btn-circle avatar">
+              <div className="w-110 rounded-full">
+                <img src={userDefaultPic} />
+              </div>
+            </label>
+          ) : null}
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="btn bg-green-400 text-white"
+            >
+              Log out
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="btn bg-gray-400 text-white">Log in</button>
+            </Link>
+          )}
+        </div>
       </ul>
     </nav>
   );

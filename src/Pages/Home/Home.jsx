@@ -9,7 +9,7 @@ const Home = () => {
       <Banner></Banner>
       <div className="mt-16">
         <h2
-          className="text-3xl font-bold
+          className="text-3xl md:text-7xl font-bold
          text-sky-400 text-center"
         >
           Our Brands
