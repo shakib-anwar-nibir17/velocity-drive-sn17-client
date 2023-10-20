@@ -1,8 +1,42 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
+  const { user } = useContext(AuthContext);
+  const email = user.email;
+
   const product = useLoaderData();
   const { photo, brand, name, price, ratings, type, details } = product;
+
+  const handleAddCartProducts = () => {
+    const newCartProduct = {
+      name,
+      brand,
+      price,
+      email,
+      type,
+      photo,
+    };
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCartProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          icon: "success",
+          title: "Congratulations",
+          text: "Product has been added to your cart",
+        });
+      });
+  };
+
   return (
     <div className="container mx-auto mt-10">
       <div className="flex flex-col md:flex-row">
@@ -21,7 +55,10 @@ const ProductDetails = () => {
             </span>
           </p>
           <div className="pt-5">
-            <button className="text-white bg-[#687EFF] p-3 rounded-lg">
+            <button
+              onClick={handleAddCartProducts}
+              className="text-white bg-[#687EFF] p-3 rounded-lg"
+            >
               Add to Cart
             </button>
           </div>
