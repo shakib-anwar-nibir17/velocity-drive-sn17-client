@@ -35,6 +35,8 @@ const AddProducts = () => {
         console.log(data);
         Swal.fire({
           icon: "success",
+          title: "Task successful",
+          text: "Product has been added",
         });
       });
 

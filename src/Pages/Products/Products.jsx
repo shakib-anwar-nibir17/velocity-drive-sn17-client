@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Products = ({ product }) => {
-  console.log(product);
-  const { name, photo, type, ratings, price } = product;
+  const { _id, name, photo, type, ratings, price } = product;
   return (
-    <div className="drop-shadow-lg bg-[#FFFFFF] py-8 rounded-md px-2">
+    <div className="drop-shadow-lg bg-[#FFFFFF] pt-4 pb-8 rounded-md px-2">
       <h2 className="text-2xl mt-4 font-bold text-orange-400 max-h-16 align-end">
         {name}
       </h2>
@@ -26,6 +26,16 @@ const Products = ({ product }) => {
         <span className="p-3 text-2xl text-black font-bold border-4 border-lime-400 rounded-full ml-32">
           {ratings}
         </span>
+      </p>
+      <p className="mt-16 text-right space-x-4 px-4">
+        <Link to={`/products/${_id}`}>
+          <button className="bg-orange-400 p-3 rounded-md text-white font-semibold">
+            View Details
+          </button>
+        </Link>
+        <button className="bg-blue-400 p-3 rounded-md text-white font-semibold">
+          Update
+        </button>
       </p>
     </div>
   );
