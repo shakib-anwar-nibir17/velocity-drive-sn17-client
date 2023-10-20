@@ -8,7 +8,7 @@ const AddProducts = () => {
     const brand = form.brand.value;
     const price = form.price.value;
     const ratings = form.ratings.value;
-    const types = form.types.value;
+    const type = form.type.value;
     const details = form.details.value;
     const photo = form.photo.value;
 
@@ -17,7 +17,7 @@ const AddProducts = () => {
       brand,
       price,
       ratings,
-      types,
+      type,
       details,
       photo,
     };
@@ -115,7 +115,7 @@ const AddProducts = () => {
             <label className="input-group">
               <input
                 type="text"
-                name="types"
+                name="type"
                 placeholder="Enter product types"
                 className="input input-bordered w-full"
               />
@@ -123,13 +123,13 @@ const AddProducts = () => {
           </div>
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text text-2xl font-bold">Details</span>
+              <span className="label-text text-2xl font-bold">Photo</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
-                name="details"
-                placeholder="Enter product details"
+                name="photo"
+                placeholder="Enter photo URL"
                 className="input input-bordered w-full"
               />
             </label>
@@ -139,13 +139,13 @@ const AddProducts = () => {
         <div className="mb-6 px-4">
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-2xl font-bold">Photo</span>
+              <span className="label-text text-2xl font-bold">Details</span>
             </label>
             <label className="input-group">
               <input
                 type="text"
-                name="photo"
-                placeholder="Enter photo URL"
+                name="details"
+                placeholder="Enter product details"
                 className="input input-bordered w-full"
               />
             </label>
