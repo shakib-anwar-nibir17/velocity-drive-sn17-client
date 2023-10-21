@@ -9,6 +9,7 @@ import Login from "../../Pages/Login/Login";
 import UpdateProducts from "../../Pages/UpdateProducts/UpdateProducts";
 import MyCart from "../../Pages/MyCart/MyCart";
 import PrivateRoute from "../Private/PrivateRoute";
+import LearnMore from "../../Pages/Shared/LearnMore/LearnMore";
 
 const routes = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/learn_more",
+        element: <LearnMore></LearnMore>,
       },
       {
         path: "/cart",
