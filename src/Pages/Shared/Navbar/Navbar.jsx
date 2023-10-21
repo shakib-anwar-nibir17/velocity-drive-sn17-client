@@ -5,7 +5,7 @@ import userDefaultPic from "../../../assets/images/avatar.png";
 import { AuthContext } from "../../../Providers/AuthProviders";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const { user, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -53,8 +53,8 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "bg-sky-400 py-3 px-40 md:px-3   rounded-md text-white"
-              : "hover:bg-[#B6FFFA] py-3 px-40 md:px-3  rounded-md hover:text-black"
+              ? "bg-sky-400 py-3 px-36 md:px-3 rounded-md text-white"
+              : "hover:bg-[#B6FFFA] py-3 px-36 md:px-3  rounded-md hover:text-black"
           }
         >
           Add Products
