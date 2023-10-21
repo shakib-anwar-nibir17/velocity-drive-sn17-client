@@ -9,7 +9,9 @@ const MyCart = () => {
   const email = user.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cart/user/${email}`)
+    fetch(
+      `https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/cart/user/${email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

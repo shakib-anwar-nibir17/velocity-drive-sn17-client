@@ -23,13 +23,16 @@ const AddProducts = () => {
     };
     console.log(newProducts);
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProducts),
-    })
+    fetch(
+      "https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/products",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProducts),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
