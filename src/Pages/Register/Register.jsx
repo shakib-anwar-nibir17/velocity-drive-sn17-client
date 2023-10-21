@@ -29,7 +29,7 @@ const Register = () => {
       return;
     } else if (!/[!@#$%^&*()_+{}\\[\]:;<>,.?~\\-]/.test(password)) {
       setRegisterError("Password must have one special character");
-      return false;
+      return;
     }
 
     createUser(email, password)

@@ -18,7 +18,6 @@ const MyCart = () => {
         setItems(data);
       });
   }, [setItems, email]);
-  console.log(items);
 
   return (
     <div className="container mx-auto mt-8">

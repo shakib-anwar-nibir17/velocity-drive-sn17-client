@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import BrandCard from "./BrandCard";
 
 const Brands = ({ brands }) => {
-  console.log(brands);
   return (
     <div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 container mx-auto mt-6 px-4">
