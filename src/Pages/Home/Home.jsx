@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Brands from "../Brands/Brands";
 import Banner from "../Shared/Banner/Banner";
-import Footer from "../Shared/Footer/Footer";
 import Services from "../Shared/Services/Services";
 import Review from "../Shared/Review/Review";
 
@@ -13,7 +12,7 @@ const Home = () => {
       <div className="mt-28">
         <h2
           className="text-3xl md:text-7xl font-bold
-         text-sky-400 text-center"
+         text-sky-400 text-center mb-8"
         >
           Services
         </h2>
@@ -37,7 +36,6 @@ const Home = () => {
         </h2>
         <Review></Review>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

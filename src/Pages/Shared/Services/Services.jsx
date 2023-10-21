@@ -7,7 +7,7 @@ import six from "../../../assets/images/6.png";
 
 const Services = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 container mx-auto px-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 container mx-auto px-4">
       <div>
         <img src={one} alt="" />
         <h2 className="text-3xl text-orange-400 font-bold text-center">

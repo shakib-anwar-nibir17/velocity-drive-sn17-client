@@ -34,7 +34,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/add_products",
-        element: <AddProducts></AddProducts>,
+        element: (
+          <PrivateRoute>
+            <AddProducts></AddProducts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update_products/:_id",

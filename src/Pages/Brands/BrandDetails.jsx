@@ -40,7 +40,7 @@ const BrandDetails = () => {
       </h4>
 
       {products.length ? (
-        <div className="grid grid-cols-4 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-4 mt-8">
           {products?.map((product) => (
             <Products key={product._id} product={product}></Products>
           ))}
@@ -60,8 +60,10 @@ const BrandDetails = () => {
           </Link>
         </div>
       )}
-      <div className="mt-20">
-        <h2 className="text-3xl  text-sky-400 font-bold">Products Adverts</h2>
+      <div className="mt-20 mb-28">
+        <h2 className="text-3xl  text-sky-400 font-bold mb-16">
+          Products Adverts
+        </h2>
         <Swiper
           slidesPerView={2}
           spaceBetween={30}

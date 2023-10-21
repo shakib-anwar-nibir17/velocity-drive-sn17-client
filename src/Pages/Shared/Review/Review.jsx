@@ -6,8 +6,8 @@ import Marquee from "react-fast-marquee";
 const Review = () => {
   return (
     <Marquee>
-      <div className="grid grid-cols-4 mt-10 container mx-auto px-4 gap-16">
-        <div className="card w-[350px] bg-base-100 shadow-xl image-full">
+      <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 mt-10 container mx-auto px-4 gap-16">
+        <div className="card w-[350px]  bg-base-100 shadow-xl image-full">
           <figure>
             <img src={review1} alt="Shoes" />
           </figure>
@@ -23,7 +23,7 @@ const Review = () => {
             </div>
           </div>
         </div>
-        <div className="card w-[350px] bg-base-100 shadow-xl image-full">
+        <div className="card w-[350px]  bg-base-100 shadow-xl image-full">
           <figure>
             <img src={review4} alt="Shoes" />
           </figure>

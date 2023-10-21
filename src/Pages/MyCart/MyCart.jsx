@@ -20,7 +20,7 @@ const MyCart = () => {
   }, [setItems, email]);
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto mt-8 min-h-screen px-4">
       <h2 className="card-title">
         User Email: <span>{email}</span>
       </h2>
