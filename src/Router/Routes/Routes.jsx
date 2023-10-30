@@ -21,18 +21,13 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>
-          fetch(
-            "https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/brands"
-          ),
+        loader: () => fetch("https://velocity-drive-server.vercel.app/brands"),
       },
       {
         path: "/brands/:id",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(
-            `https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/brands/${params.id}`
-          ),
+          fetch(`https://velocity-drive-server.vercel.app/brands/${params.id}`),
       },
       {
         path: "/add_products",
@@ -51,7 +46,7 @@ const routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/products/${params._id}`
+            `https://velocity-drive-server.vercel.app/products/${params._id}`
           ),
       },
       {
@@ -63,7 +58,7 @@ const routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/products/${params._id}`
+            `https://velocity-drive-server.vercel.app/products/${params._id}`
           ),
       },
       {

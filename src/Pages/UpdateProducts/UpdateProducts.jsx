@@ -26,16 +26,13 @@ const UpdateProducts = () => {
     };
     console.log(updatedProduct);
 
-    fetch(
-      `https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/products/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedProduct),
-      }
-    )
+    fetch(`https://velocity-drive-server.vercel.app/products/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

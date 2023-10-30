@@ -22,9 +22,7 @@ const BrandDetails = () => {
   const brand = brand_name;
 
   useEffect(() => {
-    fetch(
-      `https://velocity-drive-server-mb4xboy83-shakib-nibirs-projects.vercel.app/products/brand/${brand}`
-    )
+    fetch(`https://velocity-drive-server.vercel.app/products/brand/${brand}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
