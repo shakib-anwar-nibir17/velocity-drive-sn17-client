@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser, signInWithGoogle, handleUpdateProfile } =
+  const { createUser, signInWithGoogle, handleUpdateProfile, logOut } =
     useContext(AuthContext);
   const [registerError, setRegisterError] = useState("");
   const navigate = useNavigate();
@@ -37,12 +37,15 @@ const Register = () => {
         console.log(res.user);
         //update profile
         handleUpdateProfile(name, photo).then(() => {
+          logOut()
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
           Swal.fire({
             icon: "success",
-            title: "Congratulation",
+            title: "Congratulation!! Please Login to Proceed",
             text: "You have successfully Registered",
           });
-          navigate("/");
+          navigate("/login");
         });
       })
       .catch((error) => {

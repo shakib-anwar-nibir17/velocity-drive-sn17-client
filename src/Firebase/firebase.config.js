@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCTK2hW3WcExySWntDIy3TL0HfYvkOD4ts",
-  authDomain: "velocity-drive-sn17.firebaseapp.com",
-  projectId: "velocity-drive-sn17",
-  storageBucket: "velocity-drive-sn17.appspot.com",
-  messagingSenderId: "570232071413",
-  appId: "1:570232071413:web:5187438439ac25120151bc",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
